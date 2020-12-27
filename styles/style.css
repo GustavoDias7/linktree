@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    color: #f1f1f1;
+    box-sizing: border-box;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    background-image: linear-gradient(#00e1ff, #0084ff);
+    border: 3px solid #e9e9e9;
+    width: 100%;
+    height: 100vh;
+}
+
+.profile-image {
+    background-image: url("../assets/me.jpg");
+    background-size: cover;
+    border-radius: 100px;
+    width: 130px;
+    height: 130px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+section {
+    margin: .5rem 0;
+}
+
+.links-portfolio li {
+    border: 2px solid #e9e9e9;
+    padding: .8rem 1.5rem;
+    margin: .5rem .8rem;
+    line-height: 25px;
+    transition: 0.2s;
+}
+
+.links-portfolio li:hover, .links-portfolio li:active {
+    background: #e9e9e9;
+    color: #0084ff;
+}
+
+.links-social li {
+    display: inline-block;
+    margin: .4rem .4rem;
+}
+
+.links-social a {
+    font-size: 1rem;
+    text-decoration: underline;
+}
