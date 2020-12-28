@@ -1,7 +1,7 @@
 <br />
 <p align="center">
  
-   <img src="./design/mobile.png" alt="demo" border="0" width="70%">
+   <img src="./design/mobile.png" alt="demo" border="0" width="300px">
 
   <h1 align="center">Linktree</h1>
 
@@ -12,7 +12,7 @@ Um modelo de site, semelhante ao Linktree, para listar vários links como redes 
 ___
 
 ## Demo
-Acesse a <a href="#">demonstração</a> do site.
+Acesse a <a href="https://gustavodias7.netlify.app/">demonstração</a> do site.
 ___
 
 ## Techs
