@@ -62,10 +62,6 @@ a {
     text-decoration: none;
 }
 
-section {
-    /* margin: .5rem 0; */
-}
-
 .topic-container {
     margin: 30px auto;
     max-width: 235px;
