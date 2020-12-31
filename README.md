@@ -1,7 +1,8 @@
 <br />
 <p align="center">
  
-   <img src="./design/mobile.png" alt="demo" border="0" width="300px">
+   <img src="./design/mobile-pt-01.png" alt="demo" border="0" width="49%" style="display:inline-block">
+   <img src="./design/mobile-pt-02.png" alt="demo" border="0" width="49%">
 
   <h1 align="center">Linktree</h1>
 
