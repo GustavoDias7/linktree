@@ -27,8 +27,13 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
 <<<<<<< HEAD
+<<<<<<< HEAD
      inkscape:cx="-2.2022586"
      inkscape:cy="74.634231"
+=======
+     inkscape:cx="54.583456"
+     inkscape:cy="80.348517"
+>>>>>>> develop
 =======
      inkscape:cx="54.583456"
      inkscape:cy="80.348517"
@@ -52,7 +57,11 @@
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <dc:title></dc:title>
+=======
+        <dc:title />
+>>>>>>> develop
 =======
         <dc:title />
 >>>>>>> develop
