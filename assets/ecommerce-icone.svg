@@ -25,9 +25,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
+<<<<<<< HEAD
      inkscape:zoom="1.979899"
      inkscape:cx="147.92509"
      inkscape:cy="132.88834"
+=======
+     inkscape:zoom="5.6"
+     inkscape:cx="181.32934"
+     inkscape:cy="168.34611"
+>>>>>>> develop
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -46,7 +52,11 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+<<<<<<< HEAD
         <dc:title />
+=======
+        <dc:title></dc:title>
+>>>>>>> develop
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -96,6 +106,7 @@
        cx="17.764881"
        cy="249.37923"
        r="2.2338247" />
+<<<<<<< HEAD
     <g
        aria-label="$"
        style="font-style:normal;font-weight:normal;font-size:41.66973495px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.0417434"
@@ -105,5 +116,18 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Calibri;-inkscape-font-specification:Calibri;fill:#ffffff;fill-opacity:1;stroke-width:1.0417434"
          id="path15" />
     </g>
+=======
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:41.66973495px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.0417434;"
+       x="22.61479"
+       y="287.9895"
+       id="text871"><tspan
+         sodipodi:role="line"
+         id="tspan869"
+         x="22.61479"
+         y="287.9895"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Calibri;-inkscape-font-specification:Calibri;stroke-width:1.0417434;fill:#ffffff;fill-opacity:1;">$</tspan></text>
+>>>>>>> develop
   </g>
 </svg>

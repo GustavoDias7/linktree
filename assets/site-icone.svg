@@ -26,8 +26,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
+<<<<<<< HEAD
      inkscape:cx="-2.2022586"
      inkscape:cy="74.634231"
+=======
+     inkscape:cx="54.583456"
+     inkscape:cy="80.348517"
+>>>>>>> develop
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -46,7 +51,11 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+<<<<<<< HEAD
         <dc:title></dc:title>
+=======
+        <dc:title />
+>>>>>>> develop
       </cc:Work>
     </rdf:RDF>
   </metadata>
