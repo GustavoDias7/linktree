@@ -13,11 +13,9 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    
-    background-image: linear-gradient(#00c3ff, #0066ff);
-    border: 3px solid #e9e9e9;
     width: 100%;
     padding: 30px;
+    background-image: linear-gradient(#111111, #202020);
 }
 
 .profile-image {
@@ -33,11 +31,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 142px;
-    height: 142px;
+    width: 140px;
+    height: 140px;
     margin: auto;
     border-radius: 130px;
-    background-image: linear-gradient(to right, #00ff73, #00f7ff);
+    background-image: linear-gradient(to right, #ff0040, #b414ff);
 }
 
 h1 {
@@ -64,7 +62,7 @@ a {
 
 .topic-container {
     margin: 30px auto;
-    max-width: 235px;
+    max-width: 240px;
 }
 
 .big-icon {
@@ -84,7 +82,7 @@ a {
 
 .example:hover, .example:active {
     background: #e9e9e9;
-    color: #0084ff;
+    color: #ff0040;
 }
 
 .links-social li {
