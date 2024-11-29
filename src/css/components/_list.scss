@@ -1,0 +1,60 @@
+.list {
+  li {
+    margin-bottom: 16px;
+
+    @include sm {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.list.primary {
+  padding-left: 20px;
+
+  li {
+    list-style: disc outside;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.list.secondary {
+  li {
+    $dimention: 16px;
+    padding-left: $dimention + 8px;
+    background-image: url(pathImages("check.svg"));
+    background-repeat: no-repeat;
+    background-size: $dimention;
+    background-position: 0px 4px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.list.tertiary {
+  padding-left: 20px;
+
+  li {
+    list-style: decimal outside;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.list.quarternary {
+  padding-left: 20px;
+
+  li {
+    list-style: upper-alpha outside;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}

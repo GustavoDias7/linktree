@@ -1,0 +1,62 @@
+.check {
+  $dimentions: 16px;
+  $border-radius: 2px;
+
+  @include flex-align-center;
+  cursor: pointer;
+
+  .marker {
+
+    position: relative;
+    width: $dimentions;
+    height: $dimentions;
+    border-radius: $border-radius;
+    border: 1px solid $primary-color-500;
+    margin-right: 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      bottom: 0px;
+      margin: auto;
+      width: $dimentions - 6px;
+      height: $dimentions - 6px;
+      border-radius: $border-radius;
+      transform: scale(0);
+      transition: 0.2s ease-in-out;
+      background-color: $primary-color-500;
+    }
+  }
+
+  &.radio {
+    .marker {
+      border-radius: $dimentions;
+
+      &::before {
+        border-radius: $dimentions;
+      }
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked~.marker::before {
+      transform: scale(1);
+    }
+
+    &:disabled~.marker,
+    &:disabled~.text {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  .text {
+    line-height: 14px;
+    user-select: none;
+  }
+}

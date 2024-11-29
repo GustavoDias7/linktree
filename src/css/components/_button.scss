@@ -1,0 +1,98 @@
+.gn-button {
+  $height: 48px;
+  $padding: 20px;
+  @include flex-center-center;
+  width: fit-content;
+  font-size: 1rem;
+  height: $height;
+  padding: 0px $padding;
+  color: $primary-color-500;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background-color: $neutral-color-50;
+  transition: all 0.2s ease 0s;
+  user-select: none;
+
+  &:focus,
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.pm-button {
+    background-color: $primary-color-50;
+    color: $neutral-color-800;
+  }
+
+  &.sc-button {
+    background-color: transparent;
+    border: 1px solid $primary-color-500;
+  }
+
+  @include responsive("full",
+    "fit",
+    "left",
+    "center",
+    "right",
+    "normal",
+    "bold",
+    "small",
+    "regular",
+    "large"
+
+  ) using ($class) {
+    @if $class =="full" {
+      width: 100%;
+    }
+
+    @else if $class =="fit" {
+      width: fit-content;
+    }
+
+    @else if $class =="left" {
+      margin: 0px auto 0px 0px;
+    }
+
+    @else if $class =="center" {
+      margin: 0px auto;
+    }
+
+    @else if $class =="right" {
+      margin: 0px 0px 0px auto;
+    }
+
+    @else if $class =="normal" {
+      font-weight: 400;
+      border-width: 1px;
+    }
+
+    @else if $class =="bold" {
+      font-weight: 800;
+      border-width: 3px;
+    }
+
+    @else if $class =="small" {
+      font-size: 0.875rem;
+      height: $height - 12px;
+      padding: 0px $padding - 4px;
+    }
+
+    @else if $class =="regular" {
+      font-size: 1rem;
+      height: $height;
+      padding: 0px $padding;
+    }
+
+    @else if $class =="large" {
+      font-size: 1.25rem;
+      height: $height + 12px;
+      padding: 0px $padding + 4px;
+    }
+  }
+}

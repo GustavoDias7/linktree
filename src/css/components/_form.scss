@@ -1,0 +1,681 @@
+@use 'sass:math';
+
+// font
+$f-font-size: 16px;
+$f-font-size-small: $f-font-size - 2px;
+$f-font-size-large: $f-font-size + 2px;
+
+$f-line-height: $f-font-size;
+$f-line-height-small: $f-line-height - 2px;
+$f-line-height-large: $f-line-height + 2px;
+
+// padding
+$f-padding: 16px;
+$f-padding-small: $f-padding - 6px;
+$f-padding-large: $f-padding + 4px;
+
+$f-padding-half: math.div($f-padding, 2);
+$f-padding-half-small: math.div($f-padding-small, 2);
+$f-padding-half-large: math.div($f-padding-large, 2);
+
+$f-padding-filled: (
+  $f-padding + $f-padding-half) $f-padding (
+  $f-padding - $f-padding-half
+);
+$f-padding-filled-small: (
+  $f-padding-small + $f-padding-half-small) $f-padding-small (
+  $f-padding-small - $f-padding-half-small
+);
+$f-padding-filled-large: (
+  $f-padding-large + $f-padding-half-large) $f-padding-large (
+  $f-padding-large - $f-padding-half-large
+);
+
+// dimentions
+$f-input-height: 48px;
+$f-input-height-small: $f-input-height - 8px;
+$f-input-height-large: $f-input-height + 8px;
+$f-width: 312px;
+
+// label
+$align-label: math.div($f-input-height, 2) - math.div($f-line-height, 2);
+$align-label-small: math.div($f-input-height-small, 2) - math.div($f-line-height-small, 2);
+$align-label-large: math.div($f-input-height-large, 2) - math.div($f-line-height-large, 2);
+
+// borders
+$f-border-radius: 8px;
+$f-border-radius-small: $f-border-radius - 2px;
+$f-border-radius-large: $f-border-radius + 2px;
+$f-primary-border-width: 1px;
+$f-primary-border: $f-primary-border-width solid;
+
+// outline width
+$f-margin: 4px; // fix in outline variant
+$f-margin-gap-label-span: 4px;
+$f-width-left: $f-padding - $f-margin-gap-label-span - $f-primary-border-width;
+$f-width-left-small: $f-padding-small - $f-margin-gap-label-span - $f-primary-border-width;
+$f-width-left-large: $f-padding-large - $f-margin-gap-label-span - $f-primary-border-width;
+
+// svg
+$svg-dimention: 16px;
+$svg-dimention-small: $svg-dimention - 4px;
+$svg-dimention-large: $svg-dimention + 4px;
+
+.f-row {
+  position: relative;
+  width: 100%;
+  // max-width: $f-width;
+}
+
+.f-label {
+  display: block;
+  margin-bottom: 4px;
+
+  // use when f-input doesn't have outline and filled class (default variant)
+  @include responsive("small", "regular", "large") using ($class) {
+    @if $class =="small" {
+      font-size: $f-font-size-small;
+    }
+
+    @else if $class =="regular" {
+      font-size: $f-font-size;
+    }
+
+    @else if $class =="large" {
+      font-size: $f-font-size-large;
+    }
+  }
+}
+
+.f-input,
+.f-select {
+  display: block;
+  width: 100%;
+  height: $f-input-height;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  border-radius: $f-border-radius;
+  padding: $f-padding;
+  outline: none;
+  border: $f-primary-border;
+  transition: border $primary-transition;
+  background-color: transparent;
+  border-color: $primary-color-500;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  &::placeholder {
+    color: $blue-color-200;
+  }
+
+  &.transparent {
+    color: transparent;
+    user-select: none;
+
+    &::placeholder {
+      color: $blue-color-200;
+    }
+  }
+
+  &.error {
+    border-color: $red-color-600;
+  }
+
+  &.success {
+    border-color: $green-color-700;
+  }
+
+  @include responsive("small", "regular", "large") using ($class) {
+    @if $class =="small" {
+      padding: $f-padding-small;
+      font-size: $f-font-size-small;
+      height: $f-input-height-small;
+      border-radius: $f-border-radius-small;
+    }
+
+    @else if $class =="regular" {
+      padding: $f-padding;
+      font-size: 1rem;
+      height: $f-input-height;
+      border-radius: $f-border-radius;
+    }
+
+    @else if $class =="large" {
+      padding: $f-padding-large;
+      font-size: $f-font-size-large;
+      height: $f-input-height-large;
+      border-radius: $f-border-radius-large;
+    }
+  }
+}
+
+// icon on the right side
+// .f-input.f-icon {
+
+//   &.error,
+//   &.success {
+//     background-repeat: no-repeat;
+//     background-size: 16px;
+//     background-position: calc(100% - $padding) center;
+//   }
+
+//   &.error {
+//     background-image: url(pathImages("error.svg"));
+//   }
+
+//   &.success {
+//     background-image: url(pathImages("check-valid.svg"));
+//   }
+// }
+
+
+
+.f-input.outline {
+  border-top: none;
+
+  &~.f-label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    // max-width: $f-width;
+    display: flex;
+    font-size: $f-font-size;
+    line-height: $f-line-height;
+    transition: font-size $primary-transition;
+
+    padding: 0;
+    background-color: transparent;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      content: "";
+      border-top: $f-primary-border;
+      height: 8px;
+    }
+
+    &::before {
+      border-left: $f-primary-border;
+      border-top-left-radius: $f-border-radius;
+      border-color: $primary-color-500;
+      width: $f-width-left;
+    }
+
+    &::after {
+      border-right: $f-primary-border;
+      border-top-right-radius: $f-border-radius;
+      border-color: $primary-color-500;
+      flex: 1;
+    }
+
+    span {
+      position: absolute;
+      top: $align-label;
+      left: $f-padding;
+      transition: top $primary-transition;
+    }
+  }
+
+  // hover does not activate the label when disabled
+  &:disabled:hover~.f-label {
+    font-size: $f-font-size;
+    line-height: $f-line-height;
+
+    span {
+      position: absolute;
+      top: $align-label;
+      left: $f-padding;
+      transition: top $primary-transition;
+    }
+  }
+
+  // activate the label when, set active and hover/focus event
+  &.active~.f-label,
+  &:disabled.active~.f-label,
+  &:focus~.f-label,
+  &:hover~.f-label {
+    font-size: $f-font-size - 2px;
+    line-height: $f-line-height - 2px;
+
+    span {
+      position: relative;
+      top: -8px;
+      left: 0px;
+    }
+  }
+
+  &:disabled:hover~.f-label::before {
+    margin-right: 0px;
+  }
+
+  &.active~.f-label::before,
+  &:disabled.active~.f-label::before,
+  &:hover~.f-label::before,
+  &:focus~.f-label::before {
+    margin-right: $f-margin;
+  }
+
+  &:disabled:hover~.f-label::after {
+    margin-left: 0px;
+  }
+
+  &.active~.f-label::after,
+  &:disabled.active~.f-label::after,
+  &:hover~.f-label::after,
+  &:focus~.f-label::after {
+    margin-left: $f-margin;
+  }
+
+  &:disabled~.f-label {
+    opacity: 0.4;
+  }
+
+  &.error {
+
+    ~.f-label::before,
+    ~.f-label::after {
+      border-color: $red-color-600;
+    }
+  }
+
+  &.success {
+
+    ~.f-label::before,
+    ~.f-label::after {
+      border-color: $green-color-700;
+    }
+  }
+
+  @include responsive("small", "regular", "large") using ($class) {
+    @if $class =="small" {
+      &~.f-label {
+        font-size: $f-font-size-small;
+        line-height: $f-line-height-small;
+
+        &::before {
+          width: $f-width-left-small;
+        }
+
+        span {
+          top: $align-label-small;
+          left: $f-padding-small;
+        }
+      }
+
+      &:disabled:hover~.f-label {
+        font-size: $f-font-size-small;
+        line-height: $f-line-height-small;
+
+        span {
+          position: absolute;
+          top: $align-label-small;
+          left: $f-padding-small;
+        }
+      }
+
+      &.active~.f-label,
+      &:disabled.active~.f-label,
+      &:focus~.f-label,
+      &:hover~.f-label {
+        font-size: $f-font-size-small - 2px;
+        line-height: $f-line-height-small - 2px;
+
+        span {
+          position: relative;
+          top: -6px;
+          left: 0px;
+        }
+      }
+    }
+
+    @if $class =="regular" {
+      &~.f-label {
+        font-size: $f-font-size;
+        line-height: $f-line-height;
+
+        &::before {
+          width: $f-width-left;
+        }
+
+        span {
+          top: $align-label;
+          left: $f-padding;
+        }
+      }
+
+      &:disabled:hover~.f-label {
+        font-size: $f-font-size;
+        line-height: $f-line-height;
+
+        span {
+          position: absolute;
+          top: $align-label;
+          left: $f-padding;
+        }
+      }
+
+      &.active~.f-label,
+      &:disabled.active~.f-label,
+      &:focus~.f-label,
+      &:hover~.f-label {
+        font-size: $f-font-size - 2px;
+        line-height: $f-line-height - 2px;
+
+        span {
+          position: relative;
+          top: -6px;
+          left: 0px;
+        }
+      }
+    }
+
+    @else if $class =="large" {
+      &~.f-label {
+        font-size: $f-font-size-large;
+        line-height: $f-line-height-large;
+
+        &::before {
+          width: $f-width-left-large;
+        }
+
+        span {
+          top: $align-label-large;
+          left: $f-padding-large;
+        }
+      }
+
+
+      &:disabled:hover~.f-label {
+        font-size: $f-font-size-large;
+        line-height: $f-line-height-large;
+
+        span {
+          position: absolute;
+          top: $align-label-large;
+          left: $f-padding-large;
+        }
+      }
+
+      &.active~.f-label,
+      &:disabled.active~.f-label,
+      &:focus~.f-label,
+      &:hover~.f-label {
+        font-size: $f-font-size-large - 2px;
+        line-height: $f-line-height-large - 2px;
+
+        span {
+          position: relative;
+          top: -6px;
+          left: 0px;
+        }
+      }
+    }
+  }
+}
+
+.f-input.filled {
+  padding: $f-padding-filled;
+
+  &~.f-label {
+    margin-bottom: 0;
+    position: absolute;
+    top: $align-label;
+    left: $f-padding;
+    transition: $primary-transition;
+    font-size: $f-font-size;
+    line-height: $f-line-height;
+    background-color: $transparent-color;
+    pointer-events: none;
+  }
+
+  &:disabled~.f-label {
+    opacity: 0.4;
+  }
+
+  &:disabled:hover~.f-label {
+    top: $align-label;
+    font-size: $f-font-size;
+  }
+
+  &.active~.f-label,
+  &:disabled.active~.f-label,
+  &:focus~.f-label,
+  &:hover~.f-label {
+    font-size: $f-font-size - 2px;
+    top: math.div($f-padding, 2);
+  }
+
+  @include responsive("small", "regular", "large") using ($class) {
+    @if $class =="small" {
+      padding: $f-padding-filled-small;
+
+      &~.f-label {
+        top: $align-label-small;
+        left: $f-padding-small;
+        font-size: $f-font-size-small;
+      }
+
+      &:disabled:hover~.f-label {
+        top: $align-label-small;
+        font-size: $f-font-size-small;
+      }
+
+      &.active~.f-label,
+      &:disabled.active~.f-label,
+      &:focus~.f-label,
+      &:hover~.f-label {
+        font-size: $f-font-size-small - 2px;
+        top: math.div($f-padding-small - 6px, 2);
+      }
+    }
+
+    @else if $class =="regular" {
+      padding: $f-padding-filled;
+
+      &~.f-label {
+        top: $align-label;
+        left: $f-padding;
+        font-size: $f-font-size;
+      }
+
+      &:disabled:hover~.f-label {
+        top: $align-label;
+        font-size: $f-font-size;
+      }
+
+      &.active~.f-label,
+      &:disabled.active~.f-label,
+      &:focus~.f-label,
+      &:hover~.f-label {
+        font-size: $f-font-size - 2px;
+        top: math.div($f-padding, 2);
+      }
+    }
+
+    @else if $class =="large" {
+      padding: $f-padding-filled-large;
+
+      &~.f-label {
+        top: $align-label-large;
+        left: $f-padding-large;
+        font-size: $f-font-size-large;
+      }
+
+      &:disabled:hover~.f-label {
+        top: $align-label-large;
+        font-size: $f-font-size-large;
+      }
+
+      &.active~.f-label,
+      &:disabled.active~.f-label,
+      &:focus~.f-label,
+      &:hover~.f-label {
+        font-size: $f-font-size-large - 2px;
+        top: math.div($f-padding-large, 2);
+      }
+    }
+  }
+}
+
+.f-helper {
+  display: block;
+  font-size: 0.75rem;
+  padding: 2px 12px 0px;
+
+  &.error {
+    color: $red-color-600;
+  }
+
+  &.success {
+    color: $green-color-700;
+  }
+}
+
+.f-container {
+  position: relative;
+
+  .f-right {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 16px;
+    margin: auto;
+    height: min-content;
+
+    p {
+      background-color: #1a1a1a;
+      color: #f1f1f1;
+      padding: 4px;
+    }
+  }
+
+  input[name^="f-right"] {
+    padding-right: 64px;
+  }
+}
+
+.f-select {
+  appearance: none;
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+
+  cursor: pointer;
+  background-image: url(pathImages("select-arrow.svg"));
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: calc(100% - $f-padding) center;
+
+  /* For IE10 */
+  &::-ms-expand {
+    display: none;
+  }
+
+  option:first-of-type {
+    display: none;
+  }
+}
+
+textarea.f-input {
+  resize: vertical;
+  min-height: $f-input-height * 2;
+}
+
+.f-search {
+  @include flex-align-center;
+
+  .f-input {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+    &~.f-search-btn {
+      @include flex-center-center;
+      width: $f-input-height;
+      height: $f-input-height;
+      border: $f-primary-border;
+      border-left: none;
+      border-color: $primary-color-500;
+      transition: border $primary-transition, opacity $primary-transition;
+      border-top-right-radius: $f-border-radius;
+      border-bottom-right-radius: $f-border-radius;
+      background-color: transparent;
+      cursor: pointer;
+
+      svg {
+        width: $svg-dimention;
+        height: $svg-dimention;
+
+        path {
+          fill: $primary-color-500;
+        }
+      }
+
+      &.color {
+        border: none;
+        background-color: $primary-color-500;
+
+        svg {
+          path {
+            fill: $neutral-color-50;
+          }
+        }
+      }
+    }
+
+    @include responsive("small", "regular", "large") using ($class) {
+      @if $class =="small" {
+        &~.f-search-btn {
+          width: $f-input-height-small;
+          height: $f-input-height-small;
+          border-top-right-radius: $f-border-radius-small;
+          border-bottom-right-radius: $f-border-radius-small;
+
+          svg {
+            width: $svg-dimention-small;
+            height: $svg-dimention-small;
+          }
+        }
+      }
+
+      @else if $class =="regular" {
+        &~.f-search-btn {
+          width: $f-input-height;
+          height: $f-input-height;
+          border-top-right-radius: $f-border-radius;
+          border-bottom-right-radius: $f-border-radius;
+
+          svg {
+            width: $svg-dimention;
+            height: $svg-dimention;
+          }
+        }
+      }
+
+      @else if $class =="large" {
+        &~.f-search-btn {
+          width: $f-input-height-large;
+          height: $f-input-height-large;
+          border-top-right-radius: $f-border-radius-large;
+          border-bottom-right-radius: $f-border-radius-large;
+
+          svg {
+            width: $svg-dimention-large;
+            height: $svg-dimention-large;
+          }
+        }
+      }
+    }
+  }
+}
+
+.f-file {
+  input[type="file"] {
+    display: none;
+  }
+}

@@ -1,0 +1,82 @@
+@import "../themes/theme";
+@import "../base/global";
+@import "../utilities/breakpoints";
+@import "../utilities/mixins";
+@import "../base/container";
+@import "../layouts/grid";
+@import "../components/typography";
+
+@import "../components/button";
+// @import "../components/circle-button";
+// @import "../components/form";
+// @import "../components/checkbox";
+// @import "../components/accordion";
+// @import "../components/price/primary";
+// @import "../components/price/secondary";
+// @import "../components/price/tertiary";
+// @import "../components/list";
+
+// @import "../components/badge";
+// @import "../components/card/primary";
+// @import "../components/card/secondary";
+// @import "../components/card/tertiary";
+// @import "../components/card/quaternary";
+// @import "../components/topic/primary";
+// @import "../components/topic/secondary";
+// @import "../components/topic/tertiary";
+// @import "../components/topic/quaternary";
+// @import "../components/see-more";
+@import "../components/aspect-ratio";
+// @import "../components/counter";
+// @import "../components/modal";
+// @import "../components/notification";
+// @import "../components/social-links";
+// @import "../components/floating-link";
+// @import "../components/dropdown";
+
+// @import "../layouts/header/primary";
+// @import "../layouts/header/secondary";
+// @import "../layouts/footer/primary";
+// @import "../layouts/footer/secondary";
+// @import "../layouts/banner/primary";
+// @import "../layouts/banner/secondary";
+// @import "../layouts/banner/tertiary";
+// @import "../layouts/menu";
+// @import "../layouts/details";
+// @import "../layouts/cart";
+// @import "../layouts/order-item";
+// @import "../layouts/contact-bar";
+// @import "../layouts/contacts";
+// @import "../layouts/simple-cta";
+// @import "../layouts/about/primary";
+// @import "../layouts/about/secondary";
+// @import "../layouts/about/tertiary";
+// @import "../layouts/about/quaternary.scss";
+// @import "../layouts/about/quinary.scss";
+// @import "../layouts/about/senary.scss";
+@import "../layouts/section";
+
+@import "../../../node_modules/swiper/swiper.scss";
+@import "../../../node_modules/swiper/modules/pagination.scss";
+@import "../../../node_modules/swiper/modules/effect-coverflow.css";
+
+.profile-image {
+  @include square(140px);
+  margin: 0px auto;
+  padding: 5px;
+  border-radius: 70px;
+  background-image: linear-gradient(to right, #ff0040, #b414ff);
+
+  img {
+    border-radius: 70px;
+  }
+}
+
+.footer-links {
+  @include flex-center-center;
+  gap: 8px;
+
+  a {
+    text-decoration: underline;
+  }
+}

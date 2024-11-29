@@ -1,0 +1,50 @@
+.footer.secondary {
+  background-color: $primary-color-950;
+  color: $neutral-color-50;
+
+  .container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  h3,
+  h4,
+  p,
+  strong {
+    color: $neutral-color-50;
+  }
+
+
+  h3 {
+    text-decoration: underline;
+  }
+
+  .footer-top {
+    .social-links a::after {
+      background-color: $neutral-color-50;
+    }
+
+    a {
+      text-decoration: underline;
+      color: $neutral-color-50;
+    }
+  }
+
+  hr {
+    border: none;
+    border-bottom: 1px solid $neutral-color-50;
+    margin: 32px 0px;
+  }
+
+  .whatsapp-hours {
+    @include flex-align-center;
+    gap: 4px;
+  }
+
+  @include md {
+    .container {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+  }
+}

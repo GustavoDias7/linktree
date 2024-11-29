@@ -1,0 +1,14 @@
+.footer.primary {
+  background-color: $primary-color-800;
+  color: $neutral-color-50;
+
+  .container {
+    padding: 16px 0px;
+  }
+
+  @include md {
+    .container {
+      padding: 20px 0px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.section {
+  padding-top: 32px;
+
+  &:last-child {
+    padding-bottom: 32px;
+  }
+
+  @include sm {
+    padding-top: 48px;
+
+    &:last-child {
+      padding-bottom: 48px;
+    }
+  }
+}

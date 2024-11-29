@@ -1,0 +1,29 @@
+.about.quaternary {
+  padding: 32px 0px;
+
+  .img {
+    display: block;
+    width: 100%;
+    background-color: $neutral-color-100;
+    @include background-image("placeholder-2.svg");
+
+    >div {
+      position: relative;
+    }
+
+    h2 {
+      position: absolute;
+      left: 16px;
+      bottom: 8px;
+    }
+  }
+
+  .about-content {
+    padding: 8px 0px 8px 12px;
+    border-left: 4px solid $neutral-color-800;
+  }
+
+  @include md {
+    padding: 64px 0px;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "menu-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx webpack --watch --config webpack.config.js --mode=development",
+    "build": "npx webpack --config webpack.config.js --mode=production",
+    "server": "npx webpack serve --mode=development"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "glob-all": "^3.3.1",
+    "mini-css-extract-plugin": "^2.9.0",
+    "nunjucks": "^3.2.4",
+    "nunjucks-webpack-plugin": "^5.0.0",
+    "purgecss-webpack-plugin": "^6.0.0",
+    "sass": "^1.77.6",
+    "sass-loader": "^14.2.1",
+    "webpack": "^5.92.1",
+    "webpack-bundle-tracker": "0.4.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0",
+    "webpack-watch-files-plugin": "^1.2.1"
+  },
+  "dependencies": {
+    "swiper": "^11.1.15",
+    "vue": "^3.5.3"
+  }
+}

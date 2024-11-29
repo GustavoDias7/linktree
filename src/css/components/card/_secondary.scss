@@ -1,0 +1,22 @@
+.card.secondary {
+  position: relative;
+  @include max-width(245px, true);
+  color: $neutral-color-700;
+  background-color: $neutral-color-50;
+
+  >a {
+    font-size: 0;
+  }
+
+  .description {
+    padding: 12px 16px;
+
+    h3 {
+      text-decoration: underline;
+    }
+  }
+
+  .gn-button.sc-button {
+    margin-top: 8px;
+  }
+}

@@ -1,0 +1,57 @@
+{% extends "../bases/base.njk" %}
+
+{% block title %}Meus Links{% endblock %}
+
+{% block css %}index{% endblock %}
+{% block js %}index{% endblock %}
+
+{% block content %}
+<header class="section">
+  <div class="container xs:container">
+    <div class="profile-image">
+      <figure class="aspect-ratio aspect-1-1 fit">
+        <img src="../../img/me.jpg" alt="Foto de perfil">
+      </figure>
+    </div>
+    <h1 class="text-3xl text-align-center">Gustavo Dias</h1>
+    <p class="text-base text-align-center">Desenvolvedor Web</p>
+  </div>
+</header>
+<main class="section">
+  <div class="container xs:container">
+    <div class="g-root g-gap-12">
+      <div class="g-row">
+        {% for card in cards %}
+        <div class="g-item-12">
+          <article>
+            <a href="{{card.link}}" target="_blank">
+              <figure class="aspect-ratio aspect-16-9 width">
+                <img src="{{card.image}}" alt="{{card.name}}">
+              </figure>
+            </a>
+            <h2 class="text-2xl text-align-center text-mb-2">{{card.name}}</h2>
+            <p class="text-base text-align-center text-mb-4">{{card.description}}</p>
+            <a class="gn-button pm-button center" href="{{card.link}}" target="_blank">
+              Acesse o site
+            </a>
+          </article>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="section">
+  <div class="container xs:container">
+    <h2 class="text-2xl sm:text-3xl text-align-center text-mb-2">Quer ter seu próprio site?</h2>
+    <p class="text-base text-align-center text-mb-4">Mande uma mensagem!</p>
+    <nav>
+      <ul class="footer-links">
+        <li><a href="https://www.instagram.com/eu.gustavodias/">LinkedIn</a></li>
+        <li><a href="mailto:sitegustavodias@gmail.com">E-mail</a></li>
+        <li><a href="https://github.com/GustavoDias7">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+{% endblock %}

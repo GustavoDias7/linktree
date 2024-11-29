@@ -1,0 +1,14 @@
+.card.quaternary {
+  @include max-width(272px);
+  padding: 32px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid $neutral-color-50;
+  background: $neutral-color-600;
+  background: linear-gradient(0deg, $neutral-color-800 0%, $neutral-color-600 100%);
+
+  .icon {
+    @include square(96px);
+    margin-bottom: 16px;
+  }
+}

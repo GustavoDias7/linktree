@@ -1,0 +1,36 @@
+.social-links {
+  @include flex-align-center;
+
+  a {
+    @include flex-align-center;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 16px;
+      background-color: $primary-color-500;
+      margin: 0px 8px;
+    }
+
+    &:last-of-type::after {
+      display: none;
+    }
+  }
+
+  img {
+    @include square(20px);
+    font-size: 12px;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+  }
+}

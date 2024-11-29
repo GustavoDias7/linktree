@@ -1,0 +1,7 @@
+.about.primary {
+  .img {
+    display: block;
+    width: 100%;
+    @include background-image("placeholder-1.svg");
+  }
+}

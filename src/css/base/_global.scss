@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Montserrat:ital,wght@0,100;0,200;1,100;1,200&family=PT+Mono&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $neutral-color-50;
+}
+
+body,
+html {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  background-image: linear-gradient($neutral-color-800, $neutral-color-700);
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  transition: 0.3s;
+  outline: none;
+
+  &:focus,
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+
+li {
+  list-style-type: none;
+}

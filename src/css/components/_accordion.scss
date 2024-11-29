@@ -1,0 +1,93 @@
+.accordion {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  transition: $primary-transition;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: left;
+  background-color: transparent;
+
+  &.primary {
+    margin-bottom: 10px;
+    border: 2px solid $neutral-color-50;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  &.secondary {
+    border: none;
+    border-bottom: 1px solid $neutral-color-50;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    transition: $primary-transition;
+
+    h3 {
+      transition: $primary-transition;
+      color: $neutral-color-50;
+    }
+
+    .arrow {
+      @include square(18px);
+      margin-left: 20px;
+      background-image: url(pathImages("arrow-white.svg"));
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transition: $primary-transition;
+    }
+  }
+
+  &.active .label h3,
+  &:focus .label h3,
+  &:hover .label h3 {
+    color: $neutral-color-50;
+  }
+
+  &.active .arrow {
+    transform: rotate(-180deg);
+  }
+
+  .content {
+    height: 0;
+    overflow: hidden;
+
+    p {
+      color: $neutral-color-50;
+    }
+
+    &>div {
+      padding: 0 20px 20px;
+    }
+  }
+
+  &.active .content {
+    height: auto;
+    animation: accordion-anima 0.4s forwards;
+  }
+}
+
+@keyframes accordion-anima {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

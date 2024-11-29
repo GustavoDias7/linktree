@@ -1,0 +1,197 @@
+.modal {
+  position: fixed;
+  z-index: 3;
+  @include insert;
+  @include opacity(false);
+  transition: opacity $primary-transition;
+  background-color: $opacity-color-100;
+
+  &.active {
+    @include opacity(true);
+  }
+
+  &.primary {
+    @include flex-center-center;
+
+    .modal-content {
+      @include flex-center-center;
+      position: relative;
+      @include max-width(352px);
+      min-height: 312px;
+      max-height: 400px;
+      padding: 20px;
+      margin: 16px;
+      border-radius: 16px;
+      background-color: $neutral-color-50;
+
+      text-align: center;
+
+      h2 {
+        margin-bottom: 16px;
+        font-size: 24px;
+      }
+    }
+
+    .modal-close {
+      $dimention: 20px;
+
+      position: absolute;
+      top: $dimention;
+      right: $dimention;
+      @include square($dimention);
+      cursor: pointer;
+      border: none;
+      background-color: $transparent-color;
+      @include background-image("close.svg");
+
+      &:hover,
+      &:focus {
+        opacity: 0.6;
+        transition: $primary-transition;
+      }
+    }
+  }
+
+  &.secondary {
+    .modal-content {
+      $content-width: 480px;
+
+      position: absolute;
+      top: 0px;
+      right: -$content-width;
+
+      transform: translateX(0);
+      transition: transform 0.5s ease 0s;
+
+      display: flex;
+      flex-direction: column;
+      @include max-width($content-width);
+      height: 100vh;
+      padding: 20px;
+      background-color: $neutral-color-50;
+    }
+
+    &.active .modal-content {
+      transform: translateX(-480px);
+    }
+
+    $section-margin-bottom: 20px;
+
+    .modal-header {
+      @include flex-center-between;
+      margin-bottom: $section-margin-bottom;
+
+      .modal-close {
+        @include square(20px);
+        cursor: pointer;
+        border: none;
+        background-color: $transparent-color;
+        @include background-image("close.svg");
+
+        &:hover,
+        &:focus {
+          opacity: 0.6;
+          transition: opacity $primary-transition;
+        }
+      }
+    }
+
+    .modal-body {
+      overflow-y: auto;
+      margin-bottom: $section-margin-bottom;
+    }
+  }
+
+  &.cart-modal {
+    .modal-content {
+      padding: 20px;
+
+      @include sm {
+        padding: 32px;
+      }
+    }
+
+    .cart-item {
+      display: flex;
+      min-height: 64px;
+      gap: 8px;
+
+      .img {
+        @include square(48px);
+        border-radius: 8px;
+        overflow: hidden;
+        align-self: flex-start;
+        flex-shrink: 0;
+
+        @include sm {
+          @include square(64px);
+        }
+      }
+
+      .cart-item-center {
+        flex: auto;
+
+        h3 {
+          a {
+            color: $neutral-color-800;
+          }
+        }
+
+        .counter {
+          margin-bottom: 8px;
+        }
+
+        .price {
+          @include flex-align-center;
+          gap: 6px;
+
+          s {
+            text-decoration-color: $red-color-500;
+            text-decoration-thickness: 2px;
+          }
+
+          .discount {
+            font-size: .75rem;
+            line-height: 1rem;
+
+            user-select: none;
+            padding: 2px 4px;
+            color: $neutral-color-50;
+            background-color: $primary-color-600;
+            border-radius: 4px;
+          }
+        }
+      }
+
+      .delete {
+        @include reset-button;
+        @include square(24px);
+        @include background-image("circle-close.svg");
+        flex-shrink: 0;
+      }
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid $neutral-color-400;
+    }
+
+    .modal-footer {
+      margin-top: auto;
+    }
+
+    .cart-total {
+      .cart-total-item {
+        @include flex-center-between;
+
+        .price.tertiary {
+          strong {
+            font-size: 24px;
+            height: auto;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

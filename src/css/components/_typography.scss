@@ -1,0 +1,213 @@
+.text-xs {
+  font-size: 0.75rem; // 12px
+  line-height: 1rem; // 16px
+}
+
+.text-sm {
+  font-size: 0.875rem; // 14px
+  line-height: 1.25rem; // 20px
+}
+
+.text-base {
+  font-size: 1rem; // 16px
+  line-height: 1.5rem; // 24px
+}
+
+.text-lg {
+  font-size: 1.125rem; // 18px
+  line-height: 1.75rem; // 28px
+}
+
+.text-xl {
+  font-size: 1.25rem; // 20px
+  line-height: 1.75rem; // 28px
+}
+
+.text-2xl {
+  font-size: 1.5rem; // 24px
+  line-height: 2rem; // 32px
+}
+
+.text-3xl {
+  font-size: 1.875rem; // 30px
+  line-height: 2.25rem; // 36px
+}
+
+.text-4xl {
+  font-size: 2.25rem; // 36px
+  line-height: 2.5rem; // 40px
+}
+
+.text-5xl {
+  font-size: 3rem; // 48px
+  line-height: 1;
+}
+
+.text-6xl {
+  font-size: 3.75rem; // 60px
+  line-height: 1;
+}
+
+.text-7xl {
+  font-size: 4.5rem; // 72px
+  line-height: 1;
+}
+
+.text-8xl {
+  font-size: 6rem; // 96px
+  line-height: 1;
+}
+
+.text-9xl {
+  font-size: 8rem; // 128px
+  line-height: 1;
+}
+
+@each $bp, $vl in $breakpoints {
+  @media (min-width: $vl) {
+    .#{$bp}\:text-xs {
+      font-size: 0.75rem; // 12px
+      line-height: 1rem; // 16px
+    }
+
+    .#{$bp}\:text-sm {
+      font-size: 0.875rem; // 14px
+      line-height: 1.25rem; // 20px
+    }
+
+    .#{$bp}\:text-base {
+      font-size: 1rem; // 16px
+      line-height: 1.5rem; // 24px
+    }
+
+    .#{$bp}\:text-lg {
+      font-size: 1.125rem; // 18px
+      line-height: 1.75rem; // 28px
+    }
+
+    .#{$bp}\:text-xl {
+      font-size: 1.25rem; // 20px
+      line-height: 1.75rem; // 28px
+    }
+
+    .#{$bp}\:text-2xl {
+      font-size: 1.5rem; // 24px
+      line-height: 2rem; // 32px
+    }
+
+    .#{$bp}\:text-3xl {
+      font-size: 1.875rem; // 30px
+      line-height: 2.25rem; // 36px
+    }
+
+    .#{$bp}\:text-4xl {
+      font-size: 2.25rem; // 36px
+      line-height: 2.5rem; // 40px
+    }
+
+    .#{$bp}\:text-5xl {
+      font-size: 3rem; // 48px
+      line-height: 1;
+    }
+
+    .#{$bp}\:text-6xl {
+      font-size: 3.75rem; // 60px
+      line-height: 1;
+    }
+
+    .#{$bp}\:text-7xl {
+      font-size: 4.5rem; // 72px
+      line-height: 1;
+    }
+
+    .#{$bp}\:text-8xl {
+      font-size: 6rem; // 96px
+      line-height: 1;
+    }
+
+    .#{$bp}\:text-9xl {
+      font-size: 8rem; // 128px
+      line-height: 1;
+    }
+  }
+}
+
+.text-color-light {
+  color: $neutral-color-50;
+}
+
+.text-color-dark {
+  color: $neutral-color-900;
+}
+
+.text-color-primary {
+  color: $primary-color-500;
+}
+
+.text-color-secondary {
+  color: $indigo-color-500;
+}
+
+@each $bp, $vl in $breakpoints {
+  @media (min-width: $vl) {
+    .#{$bp}\:text-color-light {
+      color: $neutral-color-50;
+    }
+
+    .#{$bp}\:text-color-dark {
+      color: $neutral-color-900;
+    }
+
+    .#{$bp}\:text-color-primary {
+      color: $primary-color-500;
+    }
+
+    .#{$bp}\:text-color-secondary {
+      color: $indigo-color-600;
+    }
+  }
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+@each $bp, $vl in $breakpoints {
+  @media (min-width: $vl) {
+    .#{$bp}\:text-align-center {
+      text-align: center;
+    }
+
+    .#{$bp}\:text-align-left {
+      text-align: left;
+    }
+
+    .#{$bp}\:text-align-right {
+      text-align: right;
+    }
+  }
+}
+
+@for $i from 0 through 12 {
+  .text-mb-#{$i} {
+    margin-bottom: $i * 4px;
+  }
+}
+
+@each $bp, $vl in $breakpoints {
+  @media (min-width: $vl) {
+    @for $i from 0 through 12 {
+      .#{$bp}\:text-mb-#{$i} {
+        margin-bottom: $i * 4px;
+      }
+    }
+  }
+}

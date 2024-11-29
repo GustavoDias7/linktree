@@ -1,0 +1,9 @@
+.topic.quaternary {
+  color: $neutral-color-800;
+
+  .icon {
+    display: block;
+    margin: 0px auto 4px;
+    @include square(64px);
+  }
+}

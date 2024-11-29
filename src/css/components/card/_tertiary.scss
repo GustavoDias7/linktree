@@ -1,0 +1,32 @@
+.card.tertiary {
+  @include max-width(272px);
+  padding: 32px;
+  text-align: center;
+  color: $neutral-color-700;
+  background-color: $neutral-color-50;
+  border-radius: 8px;
+
+  $mb: 16px;
+
+  .icon {
+    @include square(64px);
+    margin-bottom: $mb;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: $mb;
+  }
+
+  .gn-button {
+    margin-bottom: $mb;
+  }
+
+  .subtitle {
+    margin-bottom: $mb;
+  }
+
+  .link {
+    color: $primary-color-500;
+  }
+}

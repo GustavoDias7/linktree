@@ -1,0 +1,49 @@
+@use "sass:map";
+@import "./colors";
+
+/* transition */
+$primary-transition: 0.2s ease 0s;
+$secondary-transition: 0.6s ease 0.2s;
+
+/* border */
+$primary-border: 1px solid $primary-color-500;
+
+/* box-shadow */
+
+$box-shadow-100: 0px 0px 4px 0px $neutral-color-400;
+$box-shadow-200: 0px 0px 6px 0px $neutral-color-400;
+$box-shadow-300: 0px 0px 10px 0px $neutral-color-400;
+$box-shadow-400: 0px 0px 16px 0px $neutral-color-400;
+$box-shadow-500: 0px 0px 20px 0px $neutral-color-400;
+
+// breakpoints
+
+$breakpoints: (
+  "xs": 360px,
+  "sm": 480px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+);
+
+// get px by breakingpoint name bp("sm") => 640px
+@function bp($name: "") {
+  @each $bp, $vl in $breakpoints {
+    @if ($bp ==$name) {
+      @return $vl;
+    }
+  }
+}
+
+// aspect ratio
+$aspect-ratio-1-1: 100%;
+$aspect-ratio-16-9: 56.25%;
+$aspect-ratio-4-3: 75%;
+$aspect-ratio-3-2: 66.66%;
+$aspect-ratio-8-5: 62.5%;
+
+// invert
+$aspect-ratio-9-16: 177.77%;
+$aspect-ratio-3-4: 133.33%;
+$aspect-ratio-2-3: 150.0%;
+$aspect-ratio-5-8: 160.0%;

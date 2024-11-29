@@ -1,0 +1,20 @@
+@use 'sass:math';
+
+.floating-link {
+  $area: 48px;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  @include square($area);
+  border-radius: 50px;
+  background-color: $primary-color-500;
+
+  @include background-image("whatsapp-white.svg");
+  background-size: math.div($area, 1.8);
+
+  &:focus,
+  &:hover {
+    opacity: 1;
+    background-color: $primary-color-300;
+  }
+}

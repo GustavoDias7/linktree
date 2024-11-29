@@ -1,0 +1,54 @@
+.menu {
+  $width: 320px;
+  position: fixed;
+  top: 0px;
+  right: -$width;
+  z-index: 2;
+  padding: 2rem;
+  @include max-width($width);
+  height: 100vh;
+  background-color: $neutral-color-900;
+  transition: right $primary-transition;
+
+  &.active {
+    top: 0px;
+    right: 0px;
+  }
+
+  .menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .menu-button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 0px;
+    @include reset-button;
+    @include square(20px);
+    @include background-image("close-white.svg");
+  }
+
+  .menu-logo {
+    margin: auto auto 0px;
+    display: block;
+    width: 107px;
+    height: 32px;
+  }
+
+  nav {
+    .link {
+      display: block;
+      width: fit-content;
+      color: $neutral-color-50;
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.about.secondary {
+  .img {
+    display: block;
+    width: 100%;
+    min-height: 360px;
+    @include background-image("placeholder-2.svg");
+  }
+
+  .about-right {
+    padding: 32px;
+  }
+}

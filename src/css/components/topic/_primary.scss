@@ -1,0 +1,28 @@
+.topic.primary {
+  display: flex;
+  border: $primary-border;
+  border-radius: 16px;
+  padding: 16px;
+
+  .topic-left {
+    margin-right: 12px;
+
+    .icon {
+      @include square(64px);
+    }
+  }
+
+  .topic-right {
+    color: $neutral-color-800;
+
+    .title {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+}

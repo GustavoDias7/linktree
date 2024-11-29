@@ -1,0 +1,35 @@
+.header.primary {
+  position: relative;
+  background-color: $neutral-color-50;
+  box-shadow: $box-shadow-200;
+
+  .container {
+    height: 48px;
+    @include flex-center-between;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    color: $primary-color-500;
+  }
+
+
+  @include md {
+    .container {
+      height: 64px;
+    }
+
+    .logo {
+      font-size: 1.75rem;
+    }
+
+    nav {
+      @include flex-center-center;
+      gap: 1rem;
+    }
+
+    .menu-button {
+      display: none;
+    }
+  }
+}

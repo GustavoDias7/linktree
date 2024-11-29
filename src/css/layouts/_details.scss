@@ -1,0 +1,31 @@
+.details {
+  &.primary {
+    .gn-button {
+      margin-top: 1rem;
+    }
+  }
+
+  article {
+    padding: 1.25rem;
+    background-color: $neutral-color-50;
+
+    @include md {
+      padding: 1.5rem;
+    }
+
+    .list a {
+      text-decoration: underline;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid $neutral-color-300;
+    }
+
+    footer {
+      li {
+        @include flex-center-between;
+      }
+    }
+  }
+}

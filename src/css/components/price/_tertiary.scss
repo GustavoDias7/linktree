@@ -1,0 +1,23 @@
+.price.tertiary {
+  display: flex;
+  align-items: center;
+
+  .price-left,
+  .price-right {
+    padding-top: 6px;
+  }
+
+  .price-left {
+    font-size: 0.875rem;
+  }
+
+  strong {
+    font-size: 32px;
+    height: 32px;
+    margin: 0px 3px;
+  }
+
+  .price-right {
+    font-size: 0.875rem;
+  }
+}

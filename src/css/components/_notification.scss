@@ -1,0 +1,48 @@
+.notification {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  max-width: calc(100% - 32px);
+
+  .notif-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: calc(-100% - 16px);
+    bottom: 16px;
+    padding: 16px 16px 16px 22px;
+    background-color: $neutral-color-50;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease-out;
+    border-radius: 8px;
+
+    &.active {
+      left: 16px;
+    }
+
+    .notif-msg {
+      font-size: 14px;
+
+      @include sm {
+        font-size: 16px;
+      }
+    }
+
+    .notif-line {
+      position: absolute;
+      left: 6px;
+      margin: auto;
+      width: 4px;
+      height: 80%;
+      border-radius: 4px;
+
+      &.error {
+        background-color: $red-color-600;
+      }
+
+      &.success {
+        color: $green-color-700;
+      }
+    }
+  }
+}

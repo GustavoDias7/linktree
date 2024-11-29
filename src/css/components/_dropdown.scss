@@ -1,0 +1,56 @@
+.dropdown-desktop {
+  position: relative;
+  display: inline-block;
+
+  &:hover .dropdown-content {
+    @include opacity(true);
+  }
+
+  button {
+    @include reset-button;
+    cursor: pointer;
+
+    &:hover+.dropdown-content,
+    &:focus+.dropdown-content {
+      @include opacity(true);
+    }
+  }
+
+  .dropdown-content {
+    @include opacity(false);
+    position: absolute;
+    background-color: $neutral-color-50;
+    min-width: 160px;
+    box-shadow: $box-shadow-200;
+    padding: 12px 16px;
+    z-index: 1;
+    transition: opacity $primary-transition;
+
+    a {
+      display: inline-block;
+    }
+  }
+}
+
+.dropdown-mobile {
+  .dropdown-content {
+    @include opacity(false);
+    background-color: $neutral-color-50;
+    min-width: 160px;
+    box-shadow: $box-shadow-200;
+    padding: 12px 16px;
+
+    &.active {
+      @include opacity(true);
+    }
+
+    >a {
+      display: block;
+    }
+  }
+
+  button {
+    @include reset-button;
+    cursor: pointer;
+  }
+}

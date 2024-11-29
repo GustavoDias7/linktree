@@ -1,0 +1,16 @@
+.simple-cta {
+  &.color {
+    background-color: $primary-color-500;
+
+    h2,
+    p {
+      color: $neutral-color-50;
+    }
+  }
+
+  p {
+    max-width: bp("sm");
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

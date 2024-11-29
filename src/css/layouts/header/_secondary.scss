@@ -1,0 +1,60 @@
+.header.secondary {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: $neutral-color-950;
+
+  .container {
+    height: 48px;
+    @include flex-center-between;
+  }
+
+  .logo {
+    display: block;
+
+    img {
+      display: block;
+      font-size: 12px;
+      color: $neutral-color-50;
+      height: 40px;
+    }
+  }
+
+  nav {
+    .link {
+      display: none;
+      color: $neutral-color-50;
+    }
+  }
+
+  .menu-button {
+    font-size: 0px;
+    @include reset-button;
+    @include square(20px);
+    @include background-image("menu-white.svg");
+  }
+
+  @include md {
+    .container {
+      height: 64px;
+    }
+
+    .logo {
+      font-size: 1.75rem;
+    }
+
+    nav {
+      @include flex-center-center;
+      gap: 1rem;
+
+      .link {
+        display: block;
+      }
+    }
+
+    .menu-button {
+      display: none;
+    }
+  }
+}

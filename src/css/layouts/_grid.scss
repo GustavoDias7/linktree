@@ -1,0 +1,148 @@
+.g-root {
+  overflow: hidden;
+
+  &.g-no-hidden {
+    overflow: unset;
+  }
+}
+
+.g-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.gx-center {
+    justify-content: center;
+  }
+
+  &.gx-left {
+    justify-content: left;
+  }
+
+  &.gx-right {
+    justify-content: right;
+  }
+
+  @each $bp, $vl in $breakpoints {
+    @media (min-width: $vl) {
+      &.#{$bp}\:gx-center {
+        justify-content: center;
+      }
+
+      &.#{$bp}\:gx-left {
+        justify-content: left;
+      }
+
+      &.#{$bp}\:gx-right {
+        justify-content: right;
+      }
+    }
+  }
+
+  &.gy-center>[class*="g-item"] {
+    display: flex;
+    align-items: center;
+  }
+
+  &.gy-start>[class*="g-item"] {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &.gy-end>[class*="g-item"] {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  @each $bp, $vl in $breakpoints {
+    @media (min-width: $vl) {
+      &.#{$bp}\:gy-center>[class*="g-item"] {
+        display: flex;
+        align-items: center;
+      }
+
+      &.#{$bp}\:gy-start>[class*="g-item"] {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      &.#{$bp}\:gy-end>[class*="g-item"] {
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  }
+
+  &.g-wrap {
+    flex-wrap: wrap;
+  }
+
+  &.g-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  @each $bp, $vl in $breakpoints {
+    @media (min-width: $vl) {
+      &.#{$bp}\:g-wrap {
+        flex-wrap: wrap;
+      }
+
+      &.#{$bp}\:g-wrap-reverse {
+        flex-wrap: wrap-reverse;
+      }
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .g-item-#{$i} {
+    width: calc(100% * #{$i} / 12);
+  }
+}
+
+.g-item-auto {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+@each $bp, $vl in $breakpoints {
+  @media (min-width: $vl) {
+    @for $i from 1 through 12 {
+      .#{$bp}\:g-item-#{$i} {
+        width: calc(100% * #{$i} / 12);
+      }
+    }
+
+    .#{$bp}\:g-item-auto {
+      flex: 0 0 auto;
+      width: auto;
+    }
+  }
+}
+
+@for $i from 0 through 12 {
+  .g-gap-#{$i} {
+    >.g-row {
+      margin: #{-$i * 2}px;
+
+      >[class*="g-item"] {
+        padding: #{$i * 2}px;
+      }
+    }
+  }
+}
+
+@each $bp, $vl in $breakpoints {
+  @media (min-width: $vl) {
+    @for $i from 0 through 12 {
+      .#{$bp}\:g-gap-#{$i} {
+        >.g-row {
+          margin: #{-$i * 2}px;
+
+          >[class*="g-item"] {
+            padding: #{$i * 2}px;
+          }
+        }
+      }
+    }
+  }
+}

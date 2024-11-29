@@ -1,0 +1,105 @@
+@mixin media-height($max-height) {
+  @media (max-height: $max-height) {
+    @content;
+  }
+}
+
+@mixin flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-min-height {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@mixin border-bottom {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@mixin max-width($width, $marginAuto: false) {
+  width: 100%;
+  max-width: $width;
+
+  @if ($marginAuto ==true) {
+    margin: 0px auto;
+  }
+}
+
+@mixin reset-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin square($dimention) {
+  width: $dimention;
+  height: $dimention;
+}
+
+@mixin opacity($value) {
+  @if ($value ==false) {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @else {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+@mixin insert {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@function pathImages($filename: "") {
+  @return "../../../staticfiles/img/#{$filename}";
+}
+
+@mixin background-image($url, $size: cover) {
+  background-image: url(pathImages($url));
+  background-size: $size;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin responsive($classnames...) {
+  @each $classname in $classnames {
+    &.#{$classname} {
+      @content($classname);
+    }
+  }
+
+  @each $bp, $vl in $breakpoints {
+    @media (min-width: $vl) {
+      @each $classname in $classnames {
+        &.#{$bp}\:#{$classname} {
+          @content($classname);
+        }
+      }
+    }
+  }
+}

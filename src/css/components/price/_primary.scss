@@ -1,0 +1,22 @@
+.price.primary {
+  display: flex;
+
+  .left,
+  .right {
+    span {
+      display: block;
+    }
+  }
+  
+  .left {
+    font-size: 0.875rem;
+  }
+  strong {
+    font-size: 32px;
+    height: 32px;
+    margin: 0px 3px;
+  }
+  .right {
+    font-size: 0.875rem;
+  }
+}

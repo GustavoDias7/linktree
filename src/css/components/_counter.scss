@@ -1,0 +1,189 @@
+// areas
+$area: 48px;
+$area-small: $area - 16px;
+$area-large: $area + 16px;
+
+$width-sign: 12px;
+$width-sign-small: $width-sign - 2px;
+$width-sign-large: $width-sign + 2px;
+
+$height-sign: 2px;
+
+
+// borders
+$f-border-radius: 8px;
+$f-border-radius-small: $f-border-radius - 2px;
+$f-border-radius-large: $f-border-radius + 2px;
+
+.counter {
+  @include flex-align-center;
+
+  height: $area;
+
+  &.color {
+    .counter-button {
+      border: none;
+      background-color: $neutral-color-800;
+
+      .sign {
+
+        &::before,
+        &::after {
+          background-color: $neutral-color-50;
+        }
+      }
+    }
+  }
+
+  .counter-button {
+    @include flex-center-center;
+    width: $area;
+    border-radius: $f-border-radius;
+    font-size: 1.5rem;
+    padding: 0;
+    height: 100%;
+    background-color: $transparent-color;
+    border: 1px solid $neutral-color-400;
+    cursor: pointer;
+
+    &:first-of-type {
+      border-top-right-radius: 0px !important;
+      border-bottom-right-radius: 0px !important;
+      border-right: 0px;
+    }
+
+    &:last-of-type {
+      border-top-left-radius: 0px !important;
+      border-bottom-left-radius: 0px !important;
+      border-left: 0px;
+    }
+
+    .sign {
+      position: relative;
+      display: block;
+      width: $width-sign;
+      height: $width-sign;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        margin: auto;
+        background-color: $neutral-color-800;
+      }
+
+      &::before {
+        width: $width-sign;
+        height: $height-sign;
+        top: 0px;
+        bottom: 0px;
+      }
+
+      &::after {
+        width: $height-sign;
+        height: $width-sign;
+        left: 0px;
+        right: 0px;
+      }
+
+      &.minus::after {
+        display: none;
+      }
+    }
+  }
+
+  .counter-input {
+    @include flex-center-center;
+    @include reset-button;
+    border: 1px solid $neutral-color-400;
+    outline: none;
+    width: $area;
+    height: 100%;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  @include responsive("small", "regular", "large") using ($class) {
+    @if $class =="small" {
+      height: $area-small;
+
+      .counter-button {
+        width: $area-small;
+        border-radius: $f-border-radius-small;
+
+        .sign {
+          width: $width-sign-small;
+          height: $width-sign-small;
+
+          &::before {
+            width: $width-sign-small;
+          }
+
+          &::after {
+            height: $width-sign-small;
+          }
+        }
+      }
+
+      .counter-input {
+        width: $area-small;
+        font-size: 14px;
+      }
+    }
+
+    @else if $class =="regular" {
+      height: $area;
+      border-radius: $f-border-radius;
+
+      .counter-button {
+        width: $area;
+
+        .sign {
+          width: $width-sign;
+          height: $width-sign;
+
+          &::before {
+            width: $width-sign;
+          }
+
+          &::after {
+            height: $width-sign;
+          }
+        }
+      }
+
+      .counter-input {
+        width: $area;
+        font-size: 20px;
+      }
+    }
+
+    @else if $class =="large" {
+      height: $area-large;
+
+      .counter-button {
+        width: $area-large;
+        border-radius: $f-border-radius-large;
+
+        .sign {
+          width: $width-sign-large;
+          height: $width-sign-large;
+
+          &::before {
+            width: $width-sign-large;
+          }
+
+          &::after {
+            height: $width-sign-large;
+          }
+        }
+      }
+
+      .counter-input {
+        width: $area-large;
+        font-size: 32px;
+      }
+    }
+  }
+}
